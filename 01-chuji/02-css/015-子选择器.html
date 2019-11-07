@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>015-子选择器.html</title>
+	<style>
+		/*
+		.father>p{
+			color: red;
+		}
+		*/
+		/*
+		.son>p{
+			color: red;
+		}
+		*/
+		body .son>div>p{
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">
+			小米的父元素
+			<p>小米</p>
+			<div>
+				<p>小小米</p>
+			</div>
+		</div>
+		<p>大米</p>
+	</div>
+	<div class="father">
+		<p>小明</p>
+		<div>大名</div>
+		<span>小红</span>
+	</div>
+</body>
+</html>

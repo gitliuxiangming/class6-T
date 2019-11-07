@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>098-过渡的基本实现.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition-property: width,background;
+			/*transition-duration: 0.5s;*/
+			transition-duration: 500ms;
+		}
+		
+		.box:hover{
+			width: 600px;
+			background:blue;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

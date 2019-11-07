@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>021-序选择器-区分类型.html</title>
+	<style>
+		/*
+		.father p:first-of-type{
+			color: red;
+		}
+		.father p:last-of-type{
+			color: red;
+		}
+		.father p:nth-of-type(even){
+			color: red;
+		}
+		.father p:nth-last-of-type(3){
+			color: red;
+		}*/
+		.father p:only-of-type{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<h1>hello</h1>
+		<div>div1</div>
+		<p>p1</p>
+		<p>p2</p>
+		<div>div</div>
+		<p>p3</p>
+		<p>p4</p>
+		<p>p5</p>
+		<p>p6</p>
+		<p>p7</p>
+		<div>div2</div>
+	</div>
+</body>
+</html>

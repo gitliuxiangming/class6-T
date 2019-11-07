@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>069-浮动的注意事项.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 500px;
+			height: 500px;
+			border: 10px dashed #000;
+			margin:50px auto;
+			padding: 30px;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*float: left;*/
+			float: right;
+			/*float: center;*/
+		}
+		.son1{
+			float: left;
+		}
+		.son2{
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son son1"></div>
+		<div class="son son2"></div>
+	</div>
+</body>
+</html>

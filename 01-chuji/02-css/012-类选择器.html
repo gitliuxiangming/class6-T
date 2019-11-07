@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>012-类选择器.html</title>
+	<style>
+		/*
+		p{
+			color: red;
+		}
+		*/
+		.teacher{
+			color: red;
+		}
+		.student{
+			color: blue;
+		}
+		.person{
+			font-size: 30px;
+			text-decoration: underline;
+		}
+		.hot{
+			background-color: #ccc;
+		}
+		.div{
+
+		}
+		div{
+
+		}
+		
+	</style>
+</head>
+<body>
+	<!-- <p class="teacher" class="person">张老师</p>   错误的写法--> 
+	 <p class="teacher person hot">张老师</p>
+	<p class="teacher person">陈老师</p>
+	<div class="person div">马校长</div>
+	<p class="student person">学生甲</p>
+	<p class="student person">学生乙</p>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>078-清除浮动-方法二.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father1{
+			background: red; 
+			/*margin-bottom: 20px;*/
+		}
+		.father1 p{
+			width: 100px;
+			background: yellow;
+			float: left;
+		}
+		.father2{
+			/*clear: left;*/
+			/*clear: right;*/
+			clear: both;
+			background: blue;
+			margin-top: 30px;
+		}
+		.father2 p{
+			width: 100px;
+			background: tomato;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+	</div>
+	<div class="father2">
+		<p>*1</p>
+		<p>*2</p>
+		<p>*3</p>
+	</div>
+</body>
+</html>

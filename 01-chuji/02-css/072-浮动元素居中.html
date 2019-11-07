@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>072-浮动元素居中.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #000;
+			margin:50px auto;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			/*margin:0px auto;*/
+			margin-left: 200px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

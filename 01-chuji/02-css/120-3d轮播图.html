@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>120-3d轮播图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			perspective: 500px;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			/*border: 1px solid #000;*/
+			margin:100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			
+			animation: 	sport 3s linear 0s infinite;
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		@keyframes sport{
+			form{
+				transform: rotateX(0deg);
+			}
+			to{
+				transform: rotateX(360deg);
+			}
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			font-size: 50px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: rotateX(90deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(2){
+			background: yellow;
+			transform: rotateX(180deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(3){
+			background: blue;
+			transform: rotateX(270deg) translateZ(100px) scale(2,1);
+		}
+		li:nth-child(4){
+			background: green;
+			transform: translateZ(100px) scale(2,1);
+		}
+		li:nth-child(5){
+			background: pink;
+			transform: rotateY(-90deg)  translateZ(150px);
+		}
+		li:nth-child(6){
+			background: tomato;
+			transform: rotateY(90deg)  translateZ(150px);
+		}
+		li img{
+			width: 100%;
+			height: 100%;
+		}
+		/*
+		p{
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			border: 1px solid #000;
+			margin:20px auto;
+			transform: scale(2.5);
+		}
+		*/
+	</style>
+</head>
+<body>
+	<ul>
+		<li><img src="images/ad1.jpg" alt=""></li>
+		<li><img src="images/ad2.jpg" alt=""></li>
+		<li><img src="images/ad3.jpg" alt=""></li>
+		<li><img src="images/ad4.png" alt=""></li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+	<!--  
+	<p>
+		hello
+	</p>
+	-->
+</body>
+</html>

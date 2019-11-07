@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>112-动画的基本实现.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition: all 1s;
+		}
+		.box:hover{
+			width: 600px;
+		}
+		.box2{
+			width: 200px;
+			height: 200px;
+			background: blue;
+			animation-name: sport;
+			animation-duration: 1s;
+		}
+		@keyframes sport{
+			from{
+				width: 200px;
+			}
+			to{
+				width:600px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<div class="box2"></div>
+</body>
+</html>

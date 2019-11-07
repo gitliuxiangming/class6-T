@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>023-属性选择器.html</title>
+	<style>
+		/*
+		[title]{
+			color: red;
+		}
+		
+		[title=kuazhu]{
+			color: red;
+		}
+		[title|=kuazhu]{
+			color: red;
+		}
+		[title^=kuazhu]{
+			color: red;
+		}
+		[title$=com]{
+			color: red;
+		}
+		[title~=kuazhu]{
+			color: red;
+		}*/
+		[title*='kuazhu.com']{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<a href="#">没有title</a><br/>
+	<a href="#" title="">title=''</a><br/>
+	<a href="#" title="kuazhu">title="kuazhu"</a><br/>
+	<a href="#" title="kuazhu.com">title="kuazhu.com"</a><br/>
+	<a href="#" title="kuazhu-com">title="kuazhu-com"</a><br/>
+	<a href="#" title="kuazhu com">title="kuazhu com"</a><br/>
+	<a href="#" title="www.kuazhu.com">title="www.kuazhu.com"</a><br/>
+	<a href="#" title="https://www.kuazhu com">title="https://www.kuazhu com"</a><br/>
+	<a href="#" title="www.kuazhu-com">title="www.kuazhu-com"</a><br/>
+</body>
+</html>

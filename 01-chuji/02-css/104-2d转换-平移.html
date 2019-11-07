@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104-2d转换-平移.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 600px;
+			height: 400px;
+			border: 1px solid #000;
+			margin:50px auto;
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 100px;
+			background: blue;
+			margin-bottom: 20px;
+			color:#fff;
+		}
+		li:nth-child(2){
+			/*transform: translate(-0px,-0px);*/
+			/*transform: translate(50%,50%);*/
+			transform: translate(50%,50px);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

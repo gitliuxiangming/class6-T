@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>014-后代选择器.html</title>
+	<style>
+		/*
+		.son p{
+			color: red;
+		}
+		*/
+		body .father p{
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son">
+			小米的父元素
+			<p>小米</p>
+		</div>
+		<p>大米</p>
+	</div>
+	<div class="father">
+		<p>小明</p>
+		<div>大名</div>
+	</div>
+</body>
+</html>

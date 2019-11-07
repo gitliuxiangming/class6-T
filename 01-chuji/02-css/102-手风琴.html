@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>102-手风琴.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 1000px;
+			height: 400px;
+			border: 1px solid #000;
+			margin:50px auto;
+			overflow: hidden;
+		}
+		ul li{
+			float: left;
+			list-style: none;
+			width: 200px;
+			height: 400px;
+			/*background: red;*/
+			/*overflow: hidden;*/
+			transition: width 1s;
+		}
+		ul li img{
+			height: 100%;
+		}
+		div ul li:hover{
+			width: 600px;
+		}
+		ul:hover li{
+			width: 100px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="images/ad1.jpg" alt=""></li>
+			<li><img src="images/ad2.jpg" alt=""></li>
+			<li><img src="images/ad3.jpg" alt=""></li>
+			<li><img src="images/ad4.png" alt=""></li>
+			<li><img src="images/ad5.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>043-外边距的基本设置.html</title>
+	<style>
+		.father{
+			width: 360px;
+			height: 100px;
+			border: 1px solid #000;
+		}
+		.father div{
+			display: inline-block;
+			width: 100px;
+			height: 100px;
+		}
+		.son1{
+			background: #f00;
+		}
+		.son2{
+			/*
+			margin-top: 10px;
+			margin-right: 20px;
+			margin-bottom: 30px;
+			margin-left: 40px;
+			*/
+			margin:10px 20px 30px -40px;
+			background: #0f0;
+		}
+		.son3{
+			background: #00f;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div><div class="son2"></div><div class="son3"></div>
+	</div>
+</body>
+</html>

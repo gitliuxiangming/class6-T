@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>083-浮动流布局练习.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.container{
+			width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.clearfix:after{
+			content: '';
+			display: block;
+			clear: both;
+			height: 0px;
+			visibility: hidden;
+		}
+		.clearfix{
+			*zoom: 1;
+		}
+		header{
+			/*height: 100px;*/
+			/*background: yellow;*/
+			margin-bottom: 10px;
+		}
+		.logo{
+			float: left;
+			width: 100px;
+			height: 100px;
+			background: tomato;
+		}
+		.userinfo{
+			float: right;
+			width: 200px;
+			height: 50px;
+			background: gray;
+		}
+		.nav-list{
+			width: 550px;
+			height: 50px;
+			background: purple;
+			float: right;
+		}
+		section{
+			margin-bottom: 10px;
+		}
+		.left-part{
+			float: left;
+			width: 600px;
+		}
+		.right-part{
+			float: right;
+			width: 180px;
+			height: 400px;
+			background: pink;
+		}
+		.top{
+			width: 100%;
+		}
+		.bottom{
+			width: 100%;
+			height: 40px;
+			background: green;
+			margin-top: 10px;
+		}
+		.top-left{
+			float: left;
+			width: 480px;
+		}
+		.top-right{
+			float: right;
+			width: 100px;
+			height: 350px;
+			background: skyblue;
+		}
+		.top-in{
+			width: 100%;
+			height: 170px;
+			background: yellow;
+			margin-bottom: 10px;
+		}
+		.bottom-in{
+			width: 100%;
+			height: 170px;
+			background: yellow;
+		}
+		footer{
+			height: 50px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<header class="container clearfix">
+		<h1 class="logo"></h1>
+		<div class="userinfo"></div>
+		<nav class="nav-list"></nav>
+	</header>
+	<section class="container clearfix">
+		<div class="left-part">
+			<div class="top clearfix">
+				<div class="top-left">
+					<div class="top-in"></div>
+					<div class="bottom-in"></div>
+				</div>
+				<div class="top-right"></div>
+			</div>
+			<div class="bottom"></div>
+		</div>
+		<div class="right-part"></div>
+	</section>
+	<footer class="container"></footer>
+</body>
+</html>

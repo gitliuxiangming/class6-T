@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>106-2d转换-复合样式.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 600px;
+			padding: 20px;
+			border: 1px solid #000;
+			margin:50px auto;
+		}
+		li{
+			list-style: none;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			background: yellow;
+			margin:20px auto;
+			text-align:center;
+		}
+		li:nth-child(1){
+			transform: rotate(45deg);
+		}
+		li:nth-child(2){
+			transform: translate(100px,100px);
+		}
+		li:nth-child(3){
+			transform: scale(1.2);
+		}
+		li:nth-child(4){
+			/*
+			transform: scale(1.2);
+			transform: translate(100px,100px);
+			transform: rotate(45deg);
+			*/
+			/*transform: rotate(45deg) translate(100px,100px) scale(1.2);*/
+			/*transform: rotate(45deg) scale(1.2) translate(100px,100px);*/
+			transform:rotate(60deg) translate(100px,100px)  scale(1.2);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>旋转</li>
+		<li>平移</li>
+		<li>缩放</li>
+		<li>复合样式</li>
+	</ul>
+</body>
+</html>

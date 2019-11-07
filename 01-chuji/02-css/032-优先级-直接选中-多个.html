@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>032-优先级-直接选中-多个.html</title>
+	<style>
+		p{
+			color: yellow !important;
+			font-size: 12px;
+		}
+		ul li p{
+			color: blue;
+			font-size: 14px;
+		}
+		li p{
+			color: red;
+			font-size: 16px;
+		}
+		.box .father p{
+			color: green;
+			font-size: 18px;
+		}
+		ul .son p{
+			color: purple;
+			font-size: 20px;
+		}
+		#box #father li.son p{
+			color: tomato;
+			font-size: 22px;
+		}
+		#box .father li p{
+			color: gray;
+			font-size: 24px;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul class="father" id="father">
+			<li class="son" id="son">
+				<p>我是段落</p>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

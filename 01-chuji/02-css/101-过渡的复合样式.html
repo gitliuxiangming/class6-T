@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>101-过渡的复合样式.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			/*transition: width 1s 1s linear;*/
+			/*transition: width,background 1s,3s;*//*有问题*/
+			/*transition: width 1s,background 3s,color 1s;*/
+			transition: all 5s;
+		}
+		.box:hover{
+			width: 600px;
+			color: #fff;
+			background: blue;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		你好
+	</div>
+</body>
+</html>

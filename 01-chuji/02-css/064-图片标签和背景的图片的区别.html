@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>064-图片标签和背景的图片的区别.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			height: 3000px;
+			background: url(images/1.png);
+		}
+		.box{
+			width: 500px;
+			height: 312px;
+			/*border: 1px solid #000;*/
+			background-image: url(images/2.jpg);
+			background-repeat: no-repeat;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<img src="images/2.jpg" alt="">你好
+	</div>
+	
+	<div class="box">你好</div>
+</body>
+</html>

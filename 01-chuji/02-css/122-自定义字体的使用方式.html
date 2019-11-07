@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>122-自定义字体的使用方式.html</title>
+	<style>
+
+		@font-face{
+			font-family: testFont;
+			src:url(fonts/Sansation_Light.eot),
+				url(fonts/Sansation_Light.ttf);	
+		}
+		@font-face{
+			font-family: testFont;
+			src:url(fonts/Sansation_Bold.eot),
+				url(fonts/Sansation_Bold.ttf);
+			font-weight: bold;
+		}
+		@font-face{
+			font-family: testFont;
+			src:url(fonts/Sansation_Bold.eot),
+				url(fonts/Sansation_Bold.ttf);
+			font-style: italic;
+		}
+		p{
+			/*font-family: 黑体;*/
+			font-family: testFont;
+			/*font-weight: bold;*/
+			font-style: italic;
+		}
+	</style>
+</head>
+<body>
+	<p>hello</p>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>045-margin值的重叠.html</title>
+	<style>
+		div{
+			width: 100px;
+			height: 100px;
+		}
+		.father{
+			height: 200px;
+			/*overflow: hidden;*/
+			/*float: right;*/
+			display: inline-block;
+		}
+		.son1{
+			background-color: red;
+			margin-bottom: 100px;
+		}
+		.son2{
+			background-color: blue;
+			margin-top: 150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div class="son1"></div>
+	</div>
+	
+	<div class="son2"></div>
+</body>
+</html>

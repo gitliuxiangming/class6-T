@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>109-倒地照片.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 360px;
+			height: 416px;
+			border: 1px solid #000;
+			margin:50px auto;
+			border-radius: 5px;
+			perspective: 500px;
+		}
+		img{
+			transform-origin: center bottom;
+			transition: transform 1s;
+			border-top-right-radius: 5px;
+			border-top-left-radius: 5px;
+		}
+		div:hover img{
+			
+			transform: rotateX(80deg);
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<img src="images/cluo.jpg" alt="">
+	</div>
+</body>
+</html>

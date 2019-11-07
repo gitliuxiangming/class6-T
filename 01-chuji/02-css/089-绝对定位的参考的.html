@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>089-绝对定位的参考的.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father1{
+			width: 400px;
+			height: 4000px;
+			background: gray;
+			margin:50px auto;
+			border: 10px solid #000;
+			/* position: relative; */
+			/*position: static;*/
+		}
+		.father2{
+			width: 300px;
+			height: 3000px;
+			background: blue;
+			margin:50px auto;
+			margin-left: 20px;
+			border: 50px solid #000;
+			padding: 20px;
+			box-sizing: border-box;
+			/*
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			*/
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			/*top: 0px;*/
+			bottom: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<div class="father2">
+			<div class="son"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>119-长方体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			/*border: 1px solid #000;*/
+			margin:100px auto;
+			position: relative;
+			transform-style: preserve-3d;
+			/*perspective: 500px;*/
+			transform: rotateX(-10deg) rotateY(10deg);
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			text-align: center;
+			font-size: 50px;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: rotateX(90deg) translateZ(100px) scale(1.5,1);
+		}
+		li:nth-child(2){
+			background: yellow;
+			transform: rotateX(180deg) translateZ(100px) scale(1.5,1);
+		}
+		li:nth-child(3){
+			background: blue;
+			transform: rotateX(270deg) translateZ(100px) scale(1.5,1);
+		}
+		li:nth-child(4){
+			background: green;
+			transform: translateZ(100px) scale(1.5,1);
+		}
+		li:nth-child(5){
+			background: pink;
+			transform: rotateY(-90deg)  translateZ(150px);
+		}
+		li:nth-child(6){
+			background: tomato;
+			transform: rotateY(90deg)  translateZ(150px);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+</body>
+</html>

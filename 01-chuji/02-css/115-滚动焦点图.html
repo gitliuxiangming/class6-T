@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>115-滚动焦点图.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 800px;
+			height: 400px;
+			margin:50px auto;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+		ul{
+			width: 3200px;
+			/*margin-left: -1600px;*/
+			animation: sport 6s linear 0s infinite;
+		}
+		ul:hover{
+			animation-play-state: paused;
+		}
+		div ul li:hover{
+			opacity: 1;
+		}
+		ul:hover li{
+			opacity: 0.5;
+		}
+
+		@keyframes sport{
+			from{
+				margin-left: 0px;
+			}
+			to{
+				margin-left: -2400px;
+			}
+		}
+		li{
+			list-style: none;
+			width: 800px;
+			height: 400px;
+			float: left;
+		}
+		li img{
+			width: 100%;
+			height: 100%;
+		}
+		li:nth-child(1){
+			background: red;
+		}
+		li:nth-child(2){
+			background: green;
+		}
+		li:nth-child(3){
+			background: blue;
+		}
+		li:nth-child(4){
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<ul>
+			<li><img src="images/ad1.jpg" alt=""></li>
+			<li><img src="images/ad2.jpg" alt=""></li>
+			<li><img src="images/ad3.jpg" alt=""></li>
+			<li><img src="images/ad1.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

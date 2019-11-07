@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107-修改旋转基点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			margin:50px auto;
+			position: relative;
+		}
+		li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0;
+			left: 0px;
+			/*transform-origin: 100px 100px;*/
+			/*transform-origin: 100px 200px;*/
+			/*transform-origin: 100% 100%;*/
+			/*transform-origin: 50% 50%;*/
+			transform-origin: center bottom;
+		}
+		li:nth-child(1){
+			background: red;
+			transform: rotate(10deg);
+		}
+		li:nth-child(2){
+			background: green;
+			transform: rotate(20deg);
+		}
+		li:nth-child(3){
+			background: blue;
+			transform: rotate(30deg);
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
