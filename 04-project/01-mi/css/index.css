@@ -1,0 +1,115 @@
+/*头部样式开始*/
+	.top{
+		width: 100%;
+		background: #333;
+	}
+	.top .nav{
+		float: left;
+		height: 40px;
+	}
+	.top .nav-item{
+		float: left;
+		height: 40px;
+		line-height: 40px;
+	}
+	.top .nav-item .shuxian{
+		color:#3b3733;
+		margin-left: 7px;
+		margin-right: 7px;
+	}
+	.top .user-info{
+		float: right;
+		width: 160px;
+		height: 40px;
+	}
+	.top .cart{
+		float: right;
+		width: 120px;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		background: #424242;
+		color: #b0b0b0;
+		font-size: 12px;
+	}
+	.top .cart:hover{
+		background: #fff;
+		color:#ff6700;
+	}
+	.top .cart i{
+		font-size: 20px;
+		vertical-align: -3px;
+		margin-right: 5px;
+	}
+/*头部样式结束*/
+/*焦点区域开始*/
+
+	.focus{
+		width: 100%;
+		height: 770px;
+		background: #fff;
+	}
+	.focus .header{
+		/*background: red;*/
+	}
+	.focus .header .logo a{
+		float: left;
+		width: 55px;
+		height: 55px;
+		background: url(../images/logo-1.png) no-repeat;
+		margin-top: 22px;
+	}
+	.focus .header .logo a:hover{
+		background: url(../images/logo-2.png) no-repeat;
+	}
+	.focus .header .header-nav{
+		float: left;
+		width: 660px;
+		height: 100px;
+		line-height: 100px;
+		margin-left: 178px;
+	}
+	.focus .header .header-nav .header-item{
+		float: left;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+	.focus .header .header-nav .header-item:hover a{
+		color: #ff6700;
+	}
+	.focus .header .header-nav .header-item a{
+		font-size: 16px;
+		color: #333;
+	}
+	.focus .header .search{
+		float: right;
+		margin-top: 25px;
+		width: 296px;
+		height: 50px;
+		background: tomato;
+	}
+	.focus .focus-content{
+		height: 460px;
+		background: yellow;
+	}
+	.focus .hot{
+		height: 170px;
+		background: green;
+		margin-top: 14px;
+	}
+
+/*焦点区域结束*/
+/*主要区域开始*/
+	.main{
+		width: 100%;
+		height: 6035px;
+		background: red;
+	}
+/*主要区域结束*/
+/*底部区域开始*/
+	.footer{
+		width: 100%;
+		height: 522px;
+		background: yellow;
+	}
+/*底部区域结束
