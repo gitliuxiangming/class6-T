@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>003-js修改属性的注意点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+			/*border-color: red;*/
+			/*border-top-width: 5px;*/
+		}
+		.box{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" value="我是输入框" id="txt">
+	<button onclick="document.getElementById('txt').title='我是点击后添加的'">点击触发事件</button>
+	<div id="box">123</div>
+	<!-- <button onclick="document.getElementById('box').className='box'">div的按钮</button> -->
+<!-- 	<button onclick="document.getElementById('box').style.borderColor='red'">div的按钮</button> -->
+	<button onclick="document.getElementById('box').style.borderTopWidth='5px'">div的按钮</button>
+</body>
+</html>

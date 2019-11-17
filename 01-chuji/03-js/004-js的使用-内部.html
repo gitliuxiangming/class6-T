@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>004-js的使用-内部.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border: 1px solid #000;
+			margin:100px auto;
+		}
+	</style>
+	<script>
+		//函数
+		function toBig(){
+			/*
+			this.style.width='200px';
+			this.style.height='200px';
+			this.style.background='blue';
+			*/
+			/*
+			document.getElementById('box').style.width='200px';
+			document.getElementById('box').style.height='200px';
+			document.getElementById('box').style.background='blue'
+			*/
+			var oBox = document.getElementById('box');
+			oBox.style.stylewidth='200px';
+			oBox.style.height='200px';
+			oBox.style.background='blue'
+		}
+		function toSmall(){
+			var oBox = document.getElementById('box');
+			oBox.style.width='100px';
+			oBox.style.height='100px';
+			oBox.style.background='red'
+		}
+	</script>
+</head>
+<body>
+	<div class="box" 
+		id="box" 
+		onmouseover="toBig()"
+		onmouseout="toSmall()" 
+	></div>
+</body>
+</html>
