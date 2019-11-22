@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>026-数据类型转换.html</title>
+	<script>
+		/*
+		alert(5+'5');
+		alert(5-'5');
+		*/
+	</script>
+</head>
+<body>
+	<input type="text" id="txt1">+
+	<input type="text" id="txt2">
+	<input type="button" value="求和" id="btn">
+</body>
+<script>
+	var oTxt1 = document.getElementById('txt1');
+	var oTxt2 = document.getElementById('txt2');
+	var oBtn = document.getElementById('btn');
+	// console.log(oTxt1);
+	// console.log(oTxt2);
+	// console.log(oBtn);
+	oBtn.onclick = function(){
+		// console.log(typeof oTxt1.value);
+		var val1 = parseFloat(oTxt1.value);
+		var val2 = parseFloat(oTxt2.value);
+		// console.log(isNaN(val1));
+		if(isNaN(val1)){
+			alert('第一个输入框输入有误，请检查');
+		}else if(isNaN(val2)){
+			alert('第二个输入框输入有误，请检查');
+		}else{
+			alert(val1+val2);
+		}
+		// console.log( val1)
+		// console.log( typeof val1)
+	}
+</script>
+</html>

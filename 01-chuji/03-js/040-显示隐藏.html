@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>040-显示隐藏.html</title>		
+</head>
+<body>
+	<input type="button" value="显示或者隐藏" id="btn">
+	<div id="box">我是消息盒子内容</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	// console.log(oBtn)
+	// console.log(oBox)
+	oBtn.onclick = function(){
+		// alert('aaa');
+		console.log(oBox.style.display);
+		// oBox.style.display = 'block';
+		if(oBox.style.display == 'none'){
+			oBox.style.display = 'block';
+		}else{
+			oBox.style.display = 'none';
+		}
+	}
+</script>
+</html>

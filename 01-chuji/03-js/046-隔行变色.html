@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>046-隔行变色.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+	<div>div9</div>
+	<div>div10</div>
+	<div>div11</div>
+	<div>div12</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div20</div>
+	
+</body>
+<script>
+	var aDiv = document.querySelectorAll('div');
+	// var aDiv = document.querySelector('div');
+	console.log(aDiv);
+	for(var i=0;i<aDiv.length;i++){
+		// aDiv[i].style.background = 'red';
+		if(i%2){
+			aDiv[i].style.background = 'red';
+		}else{
+			aDiv[i].style.background = 'green';
+		}
+	}
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>045-改变所有元素的颜色.html</title>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<div>div4</div>
+	<div>div5</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+	<div>div9</div>
+	<div>div10</div>
+	<div>div11</div>
+	<div>div12</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div20</div>
+	<div>div6</div>
+	<div>div7</div>
+	<div>div8</div>
+	<div>div9</div>
+	<div>div10</div>
+	<div>div11</div>
+	<div>div12</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div20</div>
+	<div>div12</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div20</div>
+	<div>div13</div>
+	<div>div14</div>
+	<div>div15</div>
+	<div>div16</div>
+	<div>div17</div>
+	<div>div18</div>
+	<div>div19</div>
+	<div>div20</div>
+	<div>div20</div>
+</body>
+<script>
+	var aDiv = document.getElementsByTagName('div');
+	console.log(aDiv.length);
+	// aDiv[1].style.background = 'red';
+	// aDiv[2].style.background = 'red';
+	// aDiv[3].style.background = 'red';
+	// aDiv[4].style.background = 'red';
+	for(var i = 0;i<aDiv.length;i++){
+		aDiv[i].style.background = 'red';
+	}
+</script>
+</html>
