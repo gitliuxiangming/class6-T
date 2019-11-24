@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>056-修改样式函数.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			border: 1px solid #000;
+		}
+		#box:after{
+			content: '';
+			display: block;
+			color:red;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn1">变宽</button>
+	<button id="btn2">变高</button>
+	<button id="btn3">变颜色</button>
+	<button id="btn4">获取宽度</button>
+	<div id="box"></div>
+</body>
+<script>
+	/*
+	function css(obj,attr,val){
+		obj.style[attr] = val;
+	}
+	*/
+	function css(){//设置和获取都可
+		if(arguments.length == 2){
+			alert(getComputedStyle(arguments[0],false)[arguments[1]])
+		}else{
+			arguments[0].style[arguments[1]] = arguments[2];
+		}
+	}
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oBtn3 = document.getElementById('btn3');
+	var oBtn4 = document.getElementById('btn4');
+	var oBox = document.getElementById('box');
+	var oBox1 = document.getElementById('box1');
+	oBtn1.onclick = function(){
+		css(oBox,'width','400px');
+	}
+	oBtn2.onclick = function(){
+		css(oBox,'height','400px');
+	}
+	oBtn3.onclick = function(){
+		css(oBox,'background','red')
+	}
+	oBtn4.onclick = function(){
+		// alert(oBox.style.width)//只能获取行内样式
+		// alert(getComputedStyle(oBox,false).width)
+		css(oBox,'width');
+	}
+</script>
+</html>
