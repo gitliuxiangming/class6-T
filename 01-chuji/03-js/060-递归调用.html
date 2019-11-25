@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>060-递归调用.html</title>
+	<script>
+		// 5!
+		// 5 * 4!
+		// 5 * 4 * 3!
+		// 5 * 4 * 3 * 2! 
+		// 5*4*3*2*1
+		//1！ = 1
+		// 0！ = 1
+		// n! = n * (n-1)!
+		function fact(n){//递归调用
+			// console.log(arguments)
+			if(n == 1){
+				return 1;
+			}
+			return n * arguments.callee(n-1);
+		}
+		// console.log(fact(9));
+		var fact2 = fact;
+		console.log(fact2);
+		fact = 1;
+		console.log(fact2(5));
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

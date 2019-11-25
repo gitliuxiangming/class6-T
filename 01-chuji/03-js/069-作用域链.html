@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>069-作用域链.html</title>
+	<script>
+		var a = 1;
+		function fn1(){
+			var a = 10;
+			var b = 2;
+			console.log('fn1a',a);//10
+			// console.log('fn1c',c);
+			function fn2(){
+				var a = 4;
+				var b = 5;
+				var c = 3;
+				console.log('fn2a',a);//4
+				console.log('fn2b',b);//5
+				function fn3(){
+					var a = 6;
+					var b = 7;
+					var c = 8;
+					console.log('fn3a',a);
+					console.log('fn3b',b);
+					console.log('fn3c',c);
+				}
+				fn3();
+			}
+			fn2();
+			
+		}
+		fn1()
+		// console.log('global',b)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

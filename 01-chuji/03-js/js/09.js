@@ -4,8 +4,11 @@ function fn(){
 	oBox.style.background='blue';
 }
 
-// oBox.onclick = fn;
+oBox.onclick = fn;
+// oBox.onclick = undefined;
+/*
 oBox.onclick = function(){
 	// oBox.style.background='blue';
 	fn()
 }
+*/

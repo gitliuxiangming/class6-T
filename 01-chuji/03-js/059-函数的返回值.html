@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>059-函数的返回值.html</title>
+	<script>
+		function sum(){
+			if(arguments[0] == 0){
+				return;
+			}
+			var result = 0;
+			for(var i=0;i<arguments.length;i++){
+				result += arguments[i];
+			}
+			
+			return result;
+			// alert(result);
+			// return [result,'a'];
+			// return;
+		}
+
+		var res = sum(0,2,3);
+		console.log(res);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

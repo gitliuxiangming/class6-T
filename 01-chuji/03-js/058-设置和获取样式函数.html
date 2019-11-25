@@ -33,11 +33,20 @@
 		obj.style[attr] = val;
 	}
 	*/
+	/*
 	function css(){//设置和获取都可
 		if(arguments.length == 2){
 			alert(getComputedStyle(arguments[0],false)[arguments[1]])
 		}else{
 			arguments[0].style[arguments[1]] = arguments[2];
+		}
+	}
+	*/
+	function css(obj,attr,val){//设置和获取都可
+		if(arguments.length == 2){
+			alert(getComputedStyle(obj,false)[attr]);
+		}else{
+			obj.style[attr] = val;
 		}
 	}
 	var oBtn1 = document.getElementById('btn1');
