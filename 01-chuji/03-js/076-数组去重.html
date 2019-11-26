@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>076-数组去重.html</title>
+	<script>
+		var arr = [1,3,5,7,5,3,4,6,1];
+		//result = [1,3,5,7,4,6];
+		//1.准备一个空数组，用来存放去重后的值
+		//2.遍历原数组
+		//3.原数组中的每一项和目标数组的中每一项进行比较
+		function uniqueArray(arr){
+			var result = [];
+			for(var i=0;i<arr.length;i++){ 
+				var isDup = false;
+				for(var j=0;j<result.length;j++){
+					if(arr[i]==result[j]){
+						isDup = true;
+						break;
+					}
+				}
+				if(!isDup){
+					result.push(arr[i]);
+				}
+			}
+			return result;
+		}
+
+		var result = uniqueArray(arr);
+		console.log(arr);
+		console.log(result);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

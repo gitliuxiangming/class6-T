@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>075-sort-比较函数.html</title>
+	<script>
+		var arr = [3,8,10,15,2,20,1,30];
+		console.log(arr);
+		var result = arr.sort(function(n1,n2){
+			console.log(n1,n2);
+			/*
+			if(n1 < n2){
+				return -10;
+			}else if(n1 > n2){
+				return 199;
+			}else{
+				return 0;
+			}
+			*/
+			// return n1 - n2;
+			return n2 - n1;
+		});
+		console.log(arr);
+		console.log(result);
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
