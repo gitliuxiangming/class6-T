@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>090-获取输入框的值插入到无序列表的前边.html</title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="button" value="发布" id="btn">
+	<ul id="ul1">
+		
+	</ul>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		// var aLi = oUl.children;
+		var val = oTxt.value;
+		var oLi = document.createElement('li');
+		// console.log(oLi)
+		oLi.innerHTML = val;
+
+		// oUl.appendChild(oLi)
+		oUl.insertBefore(oLi,oUl.firstElementChild)
+		oTxt.value = '';
+	}
+</script>
+</html>

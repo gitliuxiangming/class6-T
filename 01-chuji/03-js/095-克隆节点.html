@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>095-克隆节点.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+		div{
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="cloneNode(false)" id="btn1">
+	<input type="button" value="cloneNode(true)" id="btn2">
+	<div class="son">
+		box
+	</div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oSon = document.querySelector('.son');
+	oBtn1.onclick = function(){
+		var newSon = oSon.cloneNode(false);
+		console.log(newSon);
+		document.body.appendChild(newSon);
+	}
+	oBtn2.onclick = function(){
+		var newSon = oSon.cloneNode(true);
+		console.log(newSon);
+		document.body.appendChild(newSon);
+	}
+</script>
+</html>

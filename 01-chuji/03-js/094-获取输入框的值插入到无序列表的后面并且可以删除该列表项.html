@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>094-获取输入框的值插入到无序列表的后面并且可以删除该列表项.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+			width: 300px;
+			line-height: 30px;
+			border-bottom: 1px dashed #000;
+		}
+		a{
+			float: right;
+		}
+		.box{
+			width: 300px;
+			margin:100px auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<input type="text" id="txt">
+		<input type="button" value="发布" id="btn">
+		<ul id="ul1">
+		</ul>
+	</div>
+	
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		var val = oTxt.value;
+		var oLi = document.createElement('li');
+		var oA = document.createElement('a');
+		oLi.innerHTML = val;
+		oA.href = 'javascript:;';
+		oA.innerHTML = '删除';
+
+		oLi.appendChild(oA);
+		oUl.appendChild(oLi);
+		oTxt.value = '';
+		oA.onclick = function(){
+			oUl.removeChild(this.parentNode);
+		}
+	}
+</script>
+</html>

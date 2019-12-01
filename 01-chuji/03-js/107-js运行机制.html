@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>107-js运行机制.html</title>
+</head>
+<body>
+	<input type="button" value="按钮" id="btn">
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var i = 0;
+
+	oBtn.onclick = function(){
+		i++;
+		console.log(i);
+	}
+
+	setTimeout(function(){
+		console.log(i);
+	},2000);
+
+	i++;
+</script>
+</html>

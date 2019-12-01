@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>080-通过类名获取元素的函数.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li class="box">1</li>
+		<li>2</li>
+		<li class="box">3</li>
+		<li class="box">4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+	<div id="content">
+		<div class="box"></div>
+		<div></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div></div>
+		<div></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+<script>
+	// var aLi = document.getElementsByClassName('box');
+	// console.log(aLi);
+	var oUl = document.getElementById('ul1');
+
+
+
+
+	var oContent = document.getElementById('content')
+	function getElementsByClass(parentNode,class222Name){
+		var aEle = parentNode.children;
+		// console.log(aEle)
+		var result = [];
+		for(var i=0;i<aEle.length;i++){
+			// console.log(aEle[i].className)
+			if(aEle[i].className == class222Name){
+				result.push(aEle[i]);
+			}
+		}
+
+		return result;
+	}
+	var aLi = getElementsByClass(oUl,'box');
+	console.log(aLi)
+	var aBox = getElementsByClass(oContent,'box');
+	console.log(aBox)
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>096-九宫格.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			margin-top: 20px;
+			position: relative;
+		}
+		.son{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<button id="btn">生成元素</button>
+	<div id="box">
+		<div class="son"></div>
+		
+	</div>
+</body>
+<script>
+	var oBtn = document.getElementById('btn')
+	var oBox = document.getElementById('box')
+	var aSon =  oBox.children;
+	var iCols = 3;
+	var iWidth = 100;
+	var iHeight = 100;
+	var iMargin = 15;
+	
+	oBtn.onclick = function(){
+		// console.log(aSon)
+		var newBox = aSon[0].cloneNode();
+		oBox.appendChild(newBox);
+		// console.log(newBox)
+		for(var i=0;i<aSon.length;i++){
+			var iCol = i % iCols;
+			var iRow = parseInt(i / iCols);
+			aSon[i].style.top = (iHeight + iMargin) * iRow + 'px';
+			aSon[i].style.left = (iHeight + iMargin) * iCol + 'px';
+		}
+		
+	}
+</script>
+</html>

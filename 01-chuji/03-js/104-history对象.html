@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>104-history对象.html</title>
+</head>
+<body>
+	<a href="http://www.kuazhu.com">去跨猪</a>
+	<input type="button" value="向前" id="btn1">
+	<input type="button" value="向后" id="btn2">
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	oBtn1.onclick = function(){
+		// history.go(1);
+		// window.history.go(1);
+		window.history.forward();
+	}
+	oBtn2.onclick = function(){
+		// history.go(-1);
+		// window.history.go(-1);
+		window.history.back();
+	}
+</script>
+</html>

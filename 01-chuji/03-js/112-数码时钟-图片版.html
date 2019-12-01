@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>112-数码时钟-图片版.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#timer{
+			margin-top: 200px;
+			text-align: center;
+			font-size: 60px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt=""> :
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt=""> :
+		<img src="images/0.png" alt="">
+		<img src="images/0.png" alt="">
+	</div>
+</body>
+<script>
+	var oTimer = document.getElementById('timer');
+	var aImg = oTimer.children;
+	// console.log(aImg)
+	function to2Str(num){
+		if(num < 10){
+			return '0'+num;
+		}else{
+			return ''+num;
+		}
+	}
+	
+	function getTime(){
+		var today = new Date();
+		var iHour = today.getHours();
+		var iMinute = today.getMinutes();
+		var iSecond = today.getSeconds();
+		var oTime = to2Str(iHour) + to2Str(iMinute) + to2Str(iSecond);
+		console.log(oTime);
+		// console.log(oTime[3]);
+		// console.log(oTime.charAt(2));
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].src = "images/"+oTime.charAt(i)+".png";
+		}
+	}
+	getTime();
+	setInterval(getTime,1000)
+	
+</script>
+</html>

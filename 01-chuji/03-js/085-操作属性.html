@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>085-操作属性.html</title>
+</head>
+<body>
+	<input type="text" id="txt" value='' test='99'>
+	<input type="button" value="填充" id="btn">
+	<textarea  id="content" cols="30" rows="10"></textarea>
+</body>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oContent = document.getElementById('content');
+	oBtn.onclick = function(){
+		/*
+		var val = oTxt.value;//获取
+		oContent.value = val;//设置
+		// console.log(val)
+		*/
+		/*
+		var val = oTxt["value"];//获取
+		oContent["value"] = val;//设置
+		*/
+		/*
+		var val = oTxt["value"];//获取
+		//var val = oTxt.getAttribute('value');//获取
+		console.log(val)
+		oContent.setAttribute('value',val);//设置
+		//oContent["value"] = val;//设置
+		*/
+		//console.log(oTxt.test)
+		// console.log(oTxt["test"])
+		// console.log(oTxt.getAttribute('test'))
+		// oTxt.test = 'bbb'
+		// oTxt["test"] = 'bbb'
+		// oTxt.setAttribute('test','bbb')
+		// oTxt.removeAttribute('test')
+		oTxt.removeAttribute('value')
+	}
+</script>
+</html>

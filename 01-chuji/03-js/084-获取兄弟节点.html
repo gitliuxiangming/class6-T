@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>084-获取兄弟节点.html</title>
+</head>
+<body>
+	<ul id="ul1">
+		<li>1</li>
+		<li>2</li>
+		<li id="box">3</li>
+		<li>4</li>
+		<li>5</li>
+	</ul>
+</body>
+<script>
+	var oLi = document.getElementById('box');
+	var oUl = document.getElementById('ul1');
+	var aEle = oUl.childNodes;
+	console.log(oLi)
+	console.log(oLi.previousSibling);
+	console.log(oLi.nextSibling);
+	console.log(oLi.previousSibling == aEle[4]);
+	console.log(oLi.nextSibling == aEle[6]);
+
+	console.log(oLi.previousElementSibling);
+	console.log(oLi.nextElementSibling);
+
+	console.log(aEle[4].previousSibling)
+</script>
+</html>
