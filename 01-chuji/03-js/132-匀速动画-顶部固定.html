@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>132-匀速动画-顶部固定.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.nav{
+			height: 100px;
+			background: gray;
+		}
+		.top{
+			position: fixed;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 0;
+			background: #ff6700;
+
+		}
+		.content{
+			height: 3000px;
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="nav"></div>
+	<div class="top"></div>
+	<div class="content"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var oTop = document.querySelector('.top')
+	var isShow = false;
+
+	
+	window.onscroll = function(){
+		// console.log(getScrollTop())
+		if(getScrollTop() > 200){
+			if(!isShow){
+				// console.log('aaa');
+				animate(oTop,'height',100);
+				isShow = true;
+			}
+		}else{
+			if(isShow){
+				// console.log('bbb')
+				animate(oTop,'height',0);
+				isShow = false;
+			}
+			
+		}
+	}
+</script>
+</html>

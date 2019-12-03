@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>128-伸缩菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 300px;
+			height: 300px;
+			background: gray;
+			position: absolute;
+			top: 50px;
+			left: -300px;
+		}
+		#son{
+			width: 100px;
+			height: 300px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="son"></div>
+	</div>
+</body>
+<script>
+	var oWrap = document.getElementById('wrap');
+	var oSon = document.getElementById('son');
+	var timer;
+	oWrap.onmouseover = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			console.log(oWrap.offsetLeft)
+			var iSpeed = 0;
+			if(oWrap.offsetLeft < 0){
+				iSpeed = 9;
+			}else{
+				iSpeed = -9;
+			}
+			// if(oWrap.offsetLeft == 400){
+			if( Math.abs(0 - oWrap.offsetLeft) < Math.abs(iSpeed)){
+				oWrap.style.left = '0';
+				clearInterval(timer);
+			}else{
+				oWrap.style.left = oWrap.offsetLeft + iSpeed + 'px';
+			}
+		},30);
+	}
+	oWrap.onmouseout = function(){
+		clearInterval(timer);
+		timer = setInterval(function(){
+			console.log(oWrap.offsetLeft)
+			var iSpeed = 0;
+			if(oWrap.offsetLeft < -300){
+				iSpeed = 9;
+			}else{
+				iSpeed = -9;
+			}
+			// if(oWrap.offsetLeft == 400){
+			if( Math.abs(-300 - oWrap.offsetLeft) < Math.abs(iSpeed)){
+				oWrap.style.left = '-300px';
+				clearInterval(timer);
+			}else{
+				oWrap.style.left = oWrap.offsetLeft + iSpeed + 'px';
+			}
+		},30);
+	}
+</script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>127-动画-修改透明度.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width: 400px;
+			height: 400px;
+			margin:100px auto;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			margin-top: 20px;
+			opacity: 0.5;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<button id="btn">开始动画</button>
+		<div id="box"></div>
+	</div>
+	
+</body>
+<script>
+	var oBtn = document.getElementById('btn');
+	var oBox = document.getElementById('box');
+	var timer;
+	oBtn.onclick = function(){
+		clearInterval(timer);
+		// console.log(parseFloat(getComputedStyle(oBox,false)['opacity']));
+		timer = setInterval(function(){
+			// console.log(oBox.offsetLeft)
+			var iSpeed = 0;
+			var current = parseFloat(getComputedStyle(oBox,false)['opacity']);
+			current = Math.round(current * 100);
+			// console.log(current);
+			if(current < 100){
+				iSpeed = 2;
+			}else{
+				iSpeed = -2;
+			}
+			// if(oBox.offsetLeft == 400){
+			if( Math.abs(100 - current) < Math.abs(iSpeed)){
+				oBox.style.opacity = '1';
+				clearInterval(timer);
+			}else{
+				oBox.style.opacity = (current + iSpeed)/100;
+			}
+		},30);
+	}
+</script>
+</html>

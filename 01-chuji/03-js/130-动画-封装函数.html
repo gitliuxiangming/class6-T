@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>130-动画-封装函数.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变透明</div>
+	</div>
+</body>
+<script>
+	/*
+		obj 要改变的是那个元素
+		attr 要改变的是那个属性
+		target 要将该属性的值改到多少
+	*/
+	function animate(obj,attr,target){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var iSpeed = 0;
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == 'opacity'){
+				current = Math.round(current * 100);
+			}
+			if(current < target){
+				iSpeed = 8;
+			}else{
+				iSpeed = -8;
+			}
+			if( Math.abs(target - current) < Math.abs(iSpeed)){
+				if(attr == 'opacity'){
+					obj.style[attr] = target/100;
+				}else{
+					obj.style[attr] = target + 'px';
+				}
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style[attr] = (current + iSpeed)/100;
+				}else{
+					obj.style[attr] = current + iSpeed + 'px';
+				}
+				
+			}
+		},30);
+	}
+
+
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	// var timer;
+	oBox1.onmouseover = function(){
+		animate(oBox1,'width',300);
+	} 
+	oBox2.onmouseover = function(){
+		animate(oBox2,'height',300);
+	}
+	oBox3.onmouseover = function(){
+		animate(oBox3,'opacity',20);
+	}
+	oBox1.onmouseout = function(){
+		animate(oBox1,'width',100);
+	} 
+	oBox2.onmouseout = function(){
+		animate(oBox2,'height',100);
+	}
+	oBox3.onmouseout = function(){
+		animate(oBox3,'opacity',100);
+	} 
+</script>
+</html>
