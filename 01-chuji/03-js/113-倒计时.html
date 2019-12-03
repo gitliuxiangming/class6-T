@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>113-倒计时.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background: #000;
+		}
+		#timer{
+			text-align:center;
+			margin-top: 200px;
+			font-size: 60px;
+			color: #fff;
+		}
+	</style>
+</head>
+<body>
+	<div id="timer">
+		
+	</div>
+</body>
+<script>
+	function to2Str(num){
+		if(num < 10){
+			return '0'+num;
+		}else{
+			return ''+num;
+		}
+	}
+	var oTimer = document.getElementById('timer');
+	var oTimerEnd = 0;
+	var endTime = new Date('2019-12-01 11:16:00');
+	var endSeconds = endTime.getTime();
+	// console.log(endSeconds);
+	// console.log(Date.now())
+	function getTime(){
+		var allSeconds = parseInt((endSeconds - Date.now())/1000);
+		if(allSeconds <= 0){
+			allSeconds = 0;
+			clearInterval(oTimerEnd);
+		}
+		// console.log(allSeconds)
+		var hour = parseInt(allSeconds / 3600);
+
+		var minute = parseInt((allSeconds % 3600) / 60);
+
+		var second = (allSeconds % 3600) % 60;
+
+		oTimer.innerHTML = '距离结束还有'+to2Str(hour)+'小时'+to2Str(minute)+'分钟'+to2Str(second)+'秒';
+	}
+
+	oTimerEnd = setInterval(getTime,1000)
+
+	getTime();
+</script>
+</html>

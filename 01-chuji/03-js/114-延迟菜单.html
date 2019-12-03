@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>114-延迟菜单.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			margin:100px auto;
+		}
+		.leftBox{
+			width: 50px;
+			height: 300px;
+			background: #ccc;
+			float: left;
+		}
+		.rightBox{
+			display: none;
+			width: 300px;
+			height: 300px;
+			background: pink;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="leftBox"></div>
+		<div class="rightBox"></div>
+	</div>
+</body>
+<script>
+	var oLeftBox = document.querySelector('.leftBox');
+	var oRightBox = document.querySelector('.rightBox');
+	var timer;
+	// console.log(oLeftBox)
+	// console.log(oRightBox)
+	//1.放左边盒子，右边盒子出现
+	oRightBox.onmouseover  = oLeftBox.onmouseover = function(){
+		clearTimeout(timer);
+		oRightBox.style.display = 'block';
+	}
+	//2.移出左边盒子，右边盒子消失（由左边盒子移走有两种情况1.就是移走了2.移动到了右边盒子，为了解决移到右边盒子这种情况，要开启定时器）
+	oRightBox.onmouseout = oLeftBox.onmouseout = function(){
+		timer = setTimeout(function(){
+			oRightBox.style.display = 'none';
+		},500)
+		
+	}
+	/*
+	//3.放右边盒子，右边盒子保持显示(关闭由左边盒子移出时开启的定时器)
+	oRightBox.onmouseover = function(){
+		clearTimeout(timer);
+		oRightBox.style.display = 'block';
+	}
+	// 4.从右边移走，盒子也要消失
+	oRightBox.onmouseout = function(){
+		timer = setTimeout(function(){
+			oRightBox.style.display = 'none';
+		},500)
+	}
+	*/
+</script>
+</html>
