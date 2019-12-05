@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>143-事件处理程序.html</title>
+</head>
+<body>
+	<!-- <button onclick="alert('haha')">点我</button> -->
+	<!-- <button onclick="sayHi()">点我</button> -->
+	<button id="btn">点我</button>
+	<button id="btn1">点我移除事件</button>
+
+</body>
+<script>
+	function sayHi(){
+		alert('hi')
+		// alert('hello')
+	}
+	function sayHello(){
+		alert('hello')
+	}
+	var oBtn = document.getElementById('btn');
+	var oBtn1 = document.getElementById('btn1');
+	/*
+	oBtn.onclick = sayHi;
+	// oBtn.onclick = sayHello;
+	*/
+	oBtn.addEventListener('click',function(){
+		alert('hehe')
+	},false);
+	oBtn.addEventListener('click',sayHi,false);
+	oBtn.addEventListener('click',sayHello,false);
+
+
+
+	oBtn1.addEventListener('click',function(){
+		oBtn.removeEventListener('click',sayHi,false);
+		oBtn.removeEventListener('click',sayHello,false);
+		oBtn.removeEventListener('click',function(){
+			alert('hehe')
+		},false);
+	},false)
+</script>
+</html>

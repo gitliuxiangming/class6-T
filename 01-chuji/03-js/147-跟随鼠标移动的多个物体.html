@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>147-跟随鼠标移动的多个物体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		div{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var aDiv = document.getElementsByTagName('div');
+	window.addEventListener('mousemove',function(ev){
+		// console.log('aaa')
+		// console.log(ev.clientX,ev.clientY)
+		aDiv[0].style.left = getScrollLeft() + ev.clientX + 'px';
+		aDiv[0].style.top = getScrollTop() + ev.clientY + 'px';
+		for(var i = aDiv.length-1;i>0;i--){
+			aDiv[i].style.left = aDiv[i-1].offsetLeft + 10 + 'px';
+			aDiv[i].style.top = aDiv[i-1].offsetTop + 10 + 'px';
+		}
+	},false);
+</script>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>141-综合动画-多值动画.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			position: relative;
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+	</div>
+</body>
+<script>
+	
+	function animate3(obj,options,isLinear,endFn){
+		if(isLinear == undefined){
+			isLinear = true;
+		}
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var isStopAll = true;
+			for(var attr in options){
+				var isStop = false;
+				var iSpeed = 0;
+				var current = parseFloat(getComputedStyle(obj,false)[attr]);
+				if(attr == 'opacity'){
+					current = Math.round(current * 100);
+				}
+				if(isLinear){
+					if(current < options[attr]){
+						iSpeed = 8;
+					}else{
+						iSpeed = -8;
+					}
+					if( Math.abs(options[attr] - current) < Math.abs(iSpeed)){
+						if(attr == 'opacity'){
+							obj.style[attr] = options[attr]/100;
+						}else{
+							obj.style[attr] = options[attr] + 'px';
+						}
+						isStop = true;
+					}else{
+						isStopAll = false;
+					}
+				}else{
+					iSpeed = (options[attr] - current)/10;
+					iSpeed > 0 ? iSpeed = Math.ceil(iSpeed) : iSpeed = Math.floor(iSpeed);
+					if(!iSpeed){
+						isStop = true;
+					}else{
+						isStopAll = false;
+					}
+				}
+				if(!isStop){
+					if(attr == 'opacity'){
+						obj.style[attr] = (current + iSpeed)/100;
+					}else{
+						obj.style[attr] = current + iSpeed + 'px';
+					}
+				}
+				if(isStopAll){
+					clearInterval(obj.timer);
+					typeof endFn == 'function' && endFn();
+				}
+			}
+
+		},30)
+	}
+
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	oBox1.onmouseover = function(){
+		// animate3(oBox1,'width',300,false,function(){
+		// 	animate3(oBox1,'height',300,true,function(){
+		// 		animate3(oBox1,'opacity',30,false);
+		// 	});
+		// });
+		animate3(oBox1,{width:300,height:300,opacity:50},false,function(){
+			animate3(oBox1,{left:200})
+		});		
+	}
+	oBox1.onmouseout = function(){
+		animate3(oBox1,{width:100,height:100,opacity:100});
+		
+	} 
+
+</script>
+</html>

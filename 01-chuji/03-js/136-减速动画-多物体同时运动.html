@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>136-减速动画-多物体同时运动.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.father{
+			width: 100px;
+			margin: 50px auto;
+		}
+		.father div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			line-height: 100px;
+			text-align:center;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father">
+		<div id="box1">变宽</div>
+		<div id="box2">变高</div>
+		<div id="box3">变透明</div>
+	</div>
+</body>
+<script>
+
+	function animate1(obj,attr,target){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var iSpeed = 0;
+			var current = parseFloat(getComputedStyle(obj,false)[attr]);
+			if(attr == 'opacity'){
+				current = Math.round(current * 100);
+			}
+			iSpeed = (target - current)/10;
+			iSpeed > 0 ? iSpeed = Math.ceil(iSpeed) : iSpeed = Math.floor(iSpeed);
+			if(!iSpeed){
+				clearInterval(obj.timer);
+			}else{
+				if(attr == 'opacity'){
+					obj.style[attr] = (current + iSpeed)/100;
+				}else{
+					obj.style[attr] = current + iSpeed + 'px';
+				}
+			}
+		},30);
+	}
+
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oBox3 = document.getElementById('box3');
+	oBox1.onmouseover = function(){
+		animate1(oBox1,'width',300);
+	} 
+	oBox2.onmouseover = function(){
+		
+		animate1(oBox2,'height',300);
+	}
+	oBox3.onmouseover = function(){
+
+		animate1(oBox3,'opacity',50);
+	} 
+</script>
+</html>

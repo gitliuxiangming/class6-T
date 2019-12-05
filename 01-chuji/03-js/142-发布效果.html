@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>142-发布效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.box{
+			width: 400px;
+			margin:100px auto;
+		}
+		li{
+			list-style: none;
+			line-height:40px;
+			border-bottom: 1px dashed #000;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<textarea  id="txt" cols="30" rows="10"></textarea>
+		<button id="btn">发布</button>
+		<ul id="ul1">
+			<li>早已发布</li>
+		</ul>
+	</div>
+	
+</body>
+<script src="js/util.js"></script>
+<script>
+	var oTxt = document.getElementById('txt');
+	var oBtn = document.getElementById('btn');
+	var oUl = document.getElementById('ul1');
+	oBtn.onclick = function(){
+		if(oTxt.value != ''){
+			var val = oTxt.value;
+			var oLi = document.createElement('li');
+			oLi.innerHTML = val;
+			oLi.style.lineHeight = 0;
+			oLi.style.opacity = 0;
+			oUl.insertBefore(oLi,oUl.firstChild);
+			// animate3(oLi,{lineHeight:40,opacity:100},false)
+			animate3(oLi,{lineHeight:40},false,function(){
+				animate3(oLi,{opacity:100},false)
+			})
+			oTxt.value = '';
+		}
+		
+	}
+</script>
+</html>

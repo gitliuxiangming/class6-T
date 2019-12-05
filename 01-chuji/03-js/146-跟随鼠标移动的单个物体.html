@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>146-跟随鼠标移动的单个物体.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			width: 3000px;
+			height: 3000px;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script src="js/util.js"></script>
+<script>
+	var oBox = document.getElementById('box')
+	window.addEventListener('mousemove',function(ev){
+		// console.log('aaa')
+		// console.log(ev.clientX,ev.clientY)
+		oBox.style.left = getScrollLeft() + ev.clientX + 'px';
+		oBox.style.top = getScrollTop() + ev.clientY + 'px';
+	},false);
+</script>
+</html>
