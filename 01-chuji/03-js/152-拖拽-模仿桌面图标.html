@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>152-拖拽-模仿桌面图标.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	oBox.onmousedown = function(ev){
+
+		// console.log('aaa')
+		var disX = ev.clientX - oBox.offsetLeft;
+		var disY = ev.clientY - oBox.offsetTop;
+		// console.log(disX,disY)
+		var oClone = oBox.cloneNode(true);
+		// console.log(oClone)
+		oClone.style.opacity = '0.5';
+		document.body.appendChild(oClone)
+		document.onmousemove = function(ev){
+			// console.log(ev.clientX,ev.clientY);
+			oClone.style.left = ev.clientX - disX + 'px';
+			oClone.style.top = ev.clientY- disY + 'px';
+		}
+		document.onmouseup = function(){
+			oBox.style.left = oClone.offsetLeft + 'px';
+			oBox.style.top = oClone.offsetTop + 'px';
+			document.body.removeChild(oClone)
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>

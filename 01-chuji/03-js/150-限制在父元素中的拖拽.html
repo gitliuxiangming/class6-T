@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>150-限制在父元素中的拖拽.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#father{
+			width: 500px;
+			height: 500px;
+			background-color: #ccc;
+			margin:50px auto;
+			position: relative;
+		}
+		#box{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="father">
+		<div id="box"></div>
+	</div>
+	
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var oFather = document.getElementById('father')
+	var disX=0,disY=0;
+	oBox.onmousedown = function(ev){
+		// console.log('aaa')
+		disX = ev.clientX - oBox.offsetLeft;
+		disY = ev.clientY - oBox.offsetTop;
+		// console.log(disX,disY)
+		document.onmousemove = function(ev){
+			var l = ev.clientX - disX;
+			var t = ev.clientY- disY;
+			if(l<0){
+				l=0;
+			}else if(l > oFather.offsetWidth - oBox.offsetWidth){
+				l = oFather.offsetWidth - oBox.offsetWidth;
+			}	
+			if(t<0){
+				t=0;
+			}else if(t > oFather.offsetHeight - oBox.offsetHeight){
+				t = oFather.offsetHeight - oBox.offsetHeight;
+			}
+			oBox.style.left = l + 'px';
+			oBox.style.top = t + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = null;
+			document.onmouseup = null;
+		}
+	}
+</script>
+</html>
