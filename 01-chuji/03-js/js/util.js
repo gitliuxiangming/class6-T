@@ -176,3 +176,15 @@ function getScrollTop(){
 function getScrollLeft(){
 	return window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft;
 }
+
+function checkBump(obj1,obj2){
+	if(obj1.offsetLeft + obj1.offsetWidth > obj2.offsetLeft
+		&& obj1.offsetTop + obj1.offsetHeight > obj2.offsetTop
+		&& obj2.offsetLeft + obj2.offsetWidth > obj1.offsetLeft
+		&& obj2.offsetTop + obj2.offsetHeight > obj1.offsetTop
+	){
+		return true;
+	}else{
+		return false;
+	}
+}
