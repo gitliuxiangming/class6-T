@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>161-表单事件.html</title>
+</head>
+<body>
+	<form action="https:www.kuazhu.com" id="form1">
+		<input type="text" id="txt" autocomplete="off">
+		<input type="submit" value="提交" id="btn1">
+		<input type="reset" value="重置" id="btn2">
+	</form>
+	<p id="msg"></p>
+</body>
+<script>
+	var oForm = document.getElementById('form1');
+	var oTxt = document.getElementById('txt');
+	var oSubmit = document.getElementById('btn1');
+	var oReset = document.getElementById('btn2');
+	var oMsg = document.getElementById('msg');
+	var isTrue = true;
+	oTxt.onfocus = function(){
+		// console.log('aaa
+		oMsg.innerHTML = '请输入三到六位的用户名';
+		oMsg.style.color = 'green';
+	}
+	oTxt.onblur = function(){
+		// console.log('abc')
+		var leg = oTxt.value.length;
+		// console.log(leg)
+		if(leg<3 || leg>6){
+			oMsg.innerHTML = '输入错误';
+			oMsg.style.color = 'red';
+			isTrue = false;
+		}else{
+			oMsg.innerHTML = '输入正确';
+			oMsg.style.color = 'blue';
+			isTrue = true;
+		}
+	}
+	oTxt.onchange = function(){
+		console.log('有改动');
+	}
+	oTxt.oninput = function(){
+		var leg = oTxt.value.length;
+		// console.log(leg)
+		if(leg<3 || leg>6){
+			oMsg.innerHTML = '输入错误';
+			oMsg.style.color = 'red';
+			isTrue = false;
+		}else{
+			oMsg.innerHTML = '输入正确';
+			oMsg.style.color = 'blue';
+			isTrue = true;
+		}
+	}
+	oForm.onsubmit = function(){
+		
+		console.log('submit....')
+	}
+	oForm.onreset = function(){
+		console.log('onreset....')
+	}
+	oSubmit.onclick = function(){
+		console.log('触发提交');
+		if(!isTrue){
+			return false;
+		}
+	}
+</script>
+</html>
