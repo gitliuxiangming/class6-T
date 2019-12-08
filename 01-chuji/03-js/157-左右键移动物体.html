@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>157-左右键移动物体.html</title>\
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+	</style>
+</head>
+<body>
+	<div id="box">
+		
+	</div>
+</body>
+<script>
+	var oBox = document.getElementById('box');
+	var iSpeed = 0;
+	document.onkeydown = function(ev){
+		// console.log('aaa')
+		console.log(ev.keyCode);
+		if(ev.keyCode == 37){
+			iSpeed = -10;
+			oBox.style.left  = oBox.offsetLeft + iSpeed + 'px';
+		}else if(ev.keyCode == 39){
+			iSpeed = 10;
+			oBox.style.left  = oBox.offsetLeft + iSpeed + 'px';
+		}
+	}
+</script>
+</html>

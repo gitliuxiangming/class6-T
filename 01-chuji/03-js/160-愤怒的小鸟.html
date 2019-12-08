@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>160-愤怒的小鸟.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			width: 600px;
+			height: 600px;
+			position: absolute;
+			top: 10px;
+			left: 50px;
+			border: 1px solid #000;
+			overflow: hidden;
+		}
+		#bird{
+			width: 60px;
+			height: 60px;
+			position: absolute;
+			top: 0px;
+			left: 50%;
+			margin-left: -30px;
+			background-image: url(images/bird.jpg);
+			background-size: 60px 60px;
+			background-repeat: no-repeat;
+		}
+		.topLine{
+			position: absolute;
+			top: 0px;
+			left: 100%;
+			width: 30px;
+			background: green;
+		}
+		.bottomLine{
+			position: absolute;
+			bottom: 0px;
+			left: 100%;
+			width: 30px;
+			background: green;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bird"></div>
+	</div>
+</body>
+<script>
+	function checkBump(obj1,obj2){
+		if(obj1.offsetLeft + obj1.offsetWidth > obj2.offsetLeft
+			&& obj1.offsetTop + obj1.offsetHeight > obj2.offsetTop
+			&& obj2.offsetLeft + obj2.offsetWidth > obj1.offsetLeft
+			&& obj2.offsetTop + obj2.offsetHeight > obj1.offsetTop
+		){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	function getRandom(min,max){
+		return (Math.round(min+(max-min)*Math.random()));
+	}
+	var oBird = document.getElementById('bird');
+	var oWrap = document.getElementById('wrap');
+	var oBirdMoveTimer = 0,oAddLineTimer = 0,oLineMoveTimer = 0;
+	var iSpeed = 0;
+	var space = 100;
+	var isDie = false;
+	//控制小鸟自由落体
+	clearInterval(oBirdMoveTimer);
+	oBirdMoveTimer = setInterval(function(){
+		iSpeed += 1;
+		var t = oBird.offsetTop + iSpeed ;
+		if(t < 0 ){
+			t = 0;
+			die();
+		}else if( t > oWrap.offsetHeight - 2 - oBird.offsetHeight){
+			t = oWrap.offsetHeight - 2 - oBird.offsetHeight;
+			die();
+		}
+		oBird.style.top = t + 'px';
+	},30)
+	//生成柱子的函数
+	function addLine(){
+		var oTop = document.createElement('div');
+		var oBottom = document.createElement('div');
+		//存储left值当前的百分比
+		oTop.leftDate = 100;
+		var h = getRandom(100,300);
+		oTop.className = 'topLine';
+		oBottom.className = 'bottomLine';
+		oTop.style.height = h + 'px';
+		oBottom.style.height = oWrap.offsetHeight - h - space - 2 + 'px';
+		oWrap.appendChild(oTop);
+		oWrap.appendChild(oBottom);
+	}
+	//生成柱子的定时器
+	clearInterval(oAddLineTimer);
+	oAddLineTimer = setInterval(addLine,600);
+	//移动柱子的定时器
+	clearInterval(oLineMoveTimer);
+	oLineMoveTimer = setInterval(function(){
+		var aTopLine = document.querySelectorAll('.topLine');
+		var aBottomLine = document.querySelectorAll('.bottomLine');
+		for(var i = 0;i<aTopLine.length;i++){
+			//小鸟撞柱而亡
+			if(checkBump(oBird,aTopLine[i]) || checkBump(oBird,aBottomLine[i])){
+				die();
+			}
+			aBottomLine[i].style.left = aTopLine[i].style.left = aTopLine[i].leftDate - 1 + '%';
+			aTopLine[i].leftDate -= 1;
+			if(aTopLine[i].leftDate < -10){
+				oWrap.removeChild(aTopLine[i]);
+				oWrap.removeChild(aBottomLine[i]);
+			}
+		}
+	},30)
+
+	function die(){
+		clearInterval(oBirdMoveTimer);
+		clearInterval(oAddLineTimer);
+		clearInterval(oLineMoveTimer);
+		isDie = true;
+	}
+
+	document.onkeydown = function(){
+		if(isDie){
+			return false;//j阻止默认行为
+		}
+		// console.log('aaaa')
+		iSpeed = -10;
+	}
+</script>
+</html>

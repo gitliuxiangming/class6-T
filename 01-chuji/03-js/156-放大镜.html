@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>156-放大镜.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#wrap{
+			position: absolute;
+			top: 50px;
+			left: 50px;
+		}
+		#bigBox{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 450px;
+			height: 450px;
+			border: 1px solid #000;
+		}
+		#mask{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 240px;
+			height: 240px;
+			background: rgba(255,255,0,0.5);
+			display: none;
+			cursor: move;
+		}
+		#list{
+			position: absolute;
+			top: 460px;
+			left: 0px;
+			width: 452px;
+			height: 60px;
+		}
+		#list li{
+			list-style: none;
+			float: left;
+			width: 54px;
+			height: 54px;
+			margin-right: 10px;
+			border: 2px solid transparent;
+		}
+		#list li.active{
+			border: 2px solid #f00;
+		}
+		#largeBox{
+			position: absolute;
+			top: 0px;
+			left: 452px;
+			width: 600px;
+			height: 600px;
+			border: 1px solid #000;
+			overflow: hidden;
+			display: none;
+		}
+		#largeBox img{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="bigBox">
+			<img src="images/p_b_0001.jpg" alt="">
+			<div id="mask"></div>
+		</div>
+		<ul id="list">
+			<li class="active">
+				<img src="images/p_s_0001.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/p_s_0002.jpg" alt="">
+			</li>
+			<li>
+				<img src="images/p_s_0003.jpg" alt="">
+			</li>
+		</ul>
+		<div id="largeBox">
+			<img src="images/p_l_0001.jpg" alt="">
+		</div>
+	</div>
+</body>
+<script>
+	var aImgLis = document.querySelectorAll('#list li');
+	var oBigImg = document.querySelector('#bigBox img');
+	var oBigBox= document.querySelector('#bigBox');
+	var oMask= document.querySelector('#mask');
+	var oWrap= document.querySelector('#wrap');
+	var oLargeImg = document.querySelector('#largeBox img');
+	var oLargeBox = document.querySelector('#largeBox');
+	for(var i = 0;i<aImgLis.length;i++){
+		aImgLis[i].index = i;
+		aImgLis[i].onmouseover = function(){
+			for(var j = 0;j<aImgLis.length;j++){
+				aImgLis[j].className = '';
+			}
+			this.className = 'active';
+			oBigImg.src = "images/p_b_000"+(this.index+1)+".jpg";
+			oLargeImg.src = "images/p_l_000"+(this.index+1)+".jpg";
+		}
+	}
+	oBigBox.onmouseover = function(){
+		oMask.style.display = 'block';
+		oLargeBox.style.display = 'block';
+		oBigBox.onmousemove = function(ev){
+			// console.log(oWrap.offsetTop,oWrap.offsetLeft)
+			var t = ev.clientY - oWrap.offsetTop - oMask.offsetHeight *0.5;
+			var l = ev.clientX - oWrap.offsetLeft - oMask.offsetWidth *0.5;
+			if(l<0){
+				l = 0;
+			}else if(l > oBigBox.offsetWidth - oMask.offsetWidth){
+				l = oBigBox.offsetWidth - oMask.offsetWidth;
+			}
+			if(t<0){
+				t = 0;
+			}else if(t > oBigBox.offsetHeight - oMask.offsetHeight){
+				t = oBigBox.offsetHeight - oMask.offsetHeight;
+			}
+			var scaleX = l /(oBigBox.offsetWidth - oMask.offsetWidth);
+			var scaleY = t / (oBigBox.offsetHeight - oMask.offsetHeight);
+
+			oMask.style.top = t + 'px';
+			oMask.style.left = l + 'px';
+
+			oLargeImg.style.top = scaleY * (oLargeBox.offsetHeight - oLargeImg.offsetHeight) + 'px';
+			oLargeImg.style.left = scaleX * (oLargeBox.offsetWidth - oLargeImg.offsetWidth) + 'px';
+		}
+	}
+	oBigBox.onmouseout = function(){
+		oMask.style.display = 'none';
+		oLargeBox.style.display = 'none';
+	}
+</script>
+</html>
