@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>168-蒙版效果.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#mask{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,0.5);
+			display: none;
+		}
+		#login{
+			width: 300px;
+			height:400px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -200px;
+			margin-left: -150px;
+			background-color: #fff;
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<input type="button" value="登陆" id="btn1">
+	<div id="mask"></div>
+	<div id="login">
+		<input type="text">
+		<button id="btn2">登陆</button>
+	</div>
+</body>
+<script>
+	var oBtn1 = document.getElementById('btn1');
+	var oBtn2 = document.getElementById('btn2');
+	var oMask = document.getElementById('mask');
+	var oLogin = document.getElementById('login');
+	oBtn1.onclick = function(ev){
+		oMask.style.display = 'block';
+		oLogin.style.display = 'block';
+		ev.stopPropagation();
+	}
+	document.onclick = function(){
+		oMask.style.display = 'none';
+		oLogin.style.display = 'none';
+	}
+	oLogin.onclick = function(ev){
+		ev.stopPropagation();
+	}
+	oBtn2.onclick = function(){
+		window.location = 'https://www/kuazhu.com';
+	}
+</script>
+</html>

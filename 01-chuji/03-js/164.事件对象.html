@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>164.事件对象.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+		}
+		#box1{
+			background-color: red;
+		}
+		#box2{
+			background-color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="box1"></div>
+	<div id="box2"></div>
+	<input type="text" id="txt">
+</body>
+<script>
+	var oBox1 = document.getElementById('box1');
+	var oBox2 = document.getElementById('box2');
+	var oTxt = document.getElementById('txt');
+	oBox1.onclick = function(ev){
+		console.log(ev)
+
+	}
+	oBox2.onmouseover = function(ev){
+		console.log(ev)
+		
+	}
+	oTxt.onkeydown = function(ev){
+		console.log(ev)	
+	}
+</script>
+</html>

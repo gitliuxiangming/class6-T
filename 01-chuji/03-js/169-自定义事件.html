@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>169-自定义事件.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var newEvent = new Event('test');
+
+	document.body.addEventListener('test',function(){
+		console.log('test....')
+	},false)
+
+	document.body.dispatchEvent(newEvent);
+</script>
+</html>
