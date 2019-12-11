@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>186-正则体验.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'asdf 12 sd3456 fs78';
+	var result = [];
+	var tmp = '';
+	for(var i =0;i<str.length;i++){
+		// console.log(isNaN(parseInt(str[i])));
+		if(!isNaN(parseInt(str[i]))){
+			// console.log(str[i])
+			// result.push(str[i])
+			tmp += str[i];
+		}else{
+			if(tmp){
+				result.push(tmp);
+				tmp = '';
+			}
+		}
+	}
+	if(tmp){
+		result.push(tmp);
+		tmp = '';
+	}
+
+	console.log(result);
+	console.log(str.match(/\d+/g));
+</script>
+</html>
