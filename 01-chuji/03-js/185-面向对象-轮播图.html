@@ -51,6 +51,7 @@
 	<div id="box1">
 		
 	</div>
+	<div id="box2"></div>
 </body>
 <script>
 	function Carousel(options){
@@ -64,11 +65,16 @@
 		this.oBtnUl = null;
 		this.leftArrow = null;
 		this.rightArrow = null;
+		this.playDuration = options.playDuration;//自动轮播间隔时间
 		// console.log(oBox)
 		//初始化
 		this.init();
 		//绑定事件
 		this.bindEvent();
+		//决定是否执行轮播
+		if(this.playDuration){
+			this.auto();
+		}
 	}
 	Carousel.prototype.init = function(){
 		//给大盒子设置样式
@@ -174,12 +180,32 @@
 		this.oImgUl.children[this.now].style.opacity = 1;
 		this.oBtnUl.children[this.now].className = 'active';
 	}
+	Carousel.prototype.auto = function(){
+		var timer = 0;
+		var _this = this;
+		timer = setInterval(this.oRightArrow.onclick,this.playDuration);
+		this.oBox.onmouseover = function(){
+			clearInterval(timer);
+		}
+		this.oBox.onmouseout = function(){
+			timer = setInterval(_this.oRightArrow.onclick,_this.playDuration);
+		}
+	}
 	// new Carousel('box1',['images/carousel-1.jpg','images/carousel-2.webp','images/carousel-3.webp'],);
 	new Carousel({
 		id:'box1',
 		aImg:['images/carousel-1.jpg','images/carousel-2.webp','images/carousel-3.webp'],
 		width:830,
-		height:460
+		height:460,
+		playDuration:1000
+	})
+
+	new Carousel({
+		id:'box2',
+		aImg:['images/carousel-1.jpg','images/carousel-2.webp','images/carousel-3.webp'],
+		width:1000,
+		height:560,
+		playDuration:3000
 	})
 </script>
 </html>
