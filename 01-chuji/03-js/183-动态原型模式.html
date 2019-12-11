@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>183-动态原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name =name ;
+		this.age = age;
+		// console.log(this.sayName)
+		if(!this.sayName){//唯一判断
+			// console.log('往原型上添加方法')
+			Person.prototype.sayName = function(){
+				console.log('i am ' + this.name);
+			}
+		}
+		if(!this.sayAge){
+			Person.prototype.sayAge = function(){
+				console.log('i am ' + this.age + 'years old');
+			}
+		}
+			
+	}
+	
+	var person1 = new Person('tom',18);
+	console.log(person1)
+	person1.sayName();
+	person1.sayAge();
+	var person2 = new Person('leo',78);
+	console.log(person2)
+	person2.sayName();
+	person2.sayAge();
+
+	console.log(person1.sayName == person2.sayName)
+	
+</script>
+</html>

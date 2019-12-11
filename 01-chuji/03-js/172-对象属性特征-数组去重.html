@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>172-对象属性特征-数组去重.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = [11,22,33,55,44,22,33,66,77];
+	function unqierArray(arr){
+		var result = [];
+		var obj = {};
+		for(var i = 0;i<arr.length;i++){
+			obj[arr[i]] = '';
+		}
+		// console.log(obj)
+		for(var attr in obj){
+			// console.log(attr)
+			result.push(attr*1);
+		}
+
+		return result;
+	}
+	console.log(unqierArray(arr));
+</script>
+</html>

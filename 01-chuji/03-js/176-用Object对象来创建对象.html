@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>176-用Object对象来创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = new Object();
+	var obj2 = new Object();
+	console.log(obj);
+	obj.name = 'tom';
+	obj.age = 18;
+	obj.sayHi = function(){
+		console.log('hi')
+	}
+	console.log(obj);
+	obj.sayHi();
+	obj2.name = 'tom';
+	obj2.age = 18;
+	obj2.sayHi = function(){
+		console.log('hi')
+	}
+	console.log(obj2)
+	console.log(obj.sayHi == obj2.sayHi)
+</script>
+</html>

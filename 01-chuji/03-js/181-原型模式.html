@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>181-原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name){
+		this.name = name
+	}
+	console.log(Person.prototype);
+	Person.prototype.sayHi = function(){
+		console.log('hi')
+	}
+	var person1 = new Person('tom');
+	console.log(person1)
+	person1.sayHi();
+	var person2 = new Person('leo');
+	console.log(person2)
+	person2.sayHi();
+	console.log(person1.sayHi == person2.sayHi);
+	
+</script>
+</html>

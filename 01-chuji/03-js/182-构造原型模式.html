@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>182-构造原型模式.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name,age){
+		this.name =name ;
+		this.age = age;
+	}
+	Person.prototype.sayName = function(){
+		console.log('i am ' + this.name);
+	}
+	Person.prototype.sayAge = function(){
+		console.log('i am ' + this.age + 'years old');
+	}	
+	Person.prototype.EYES = 2;
+	var person1 = new Person('tom',18);
+	console.log(person1.EYES)
+	person1.sayName();
+	person1.sayAge();
+	var person2 = new Person('leo',78);
+	console.log(person2.EYES)
+	person2.sayName();
+	person2.sayAge();
+
+	console.log(person1.sayName == person2.sayName)
+	
+</script>
+</html>

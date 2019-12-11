@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>171-对象的特点.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var obj = {
+		name:'tom',
+		// name:'leo',//无序唯一
+		age:18,
+		sayHi:function(){
+			console.log(this);
+			console.log('hi...' + this.name);
+		},
+		friends:['bob','amy','dev']
+	}
+	console.log(obj)
+	obj.sayHi();
+	function hi(argument) {
+		console.log(this)
+	}
+	hi();
+	window.hi();
+</script>
+</html>

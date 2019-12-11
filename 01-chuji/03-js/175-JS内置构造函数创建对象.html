@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>175-JS内置构造函数创建对象.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var arr = new Array();
+	arr.name = 'tom';
+	arr.age = 18;
+	arr.sayHi = function(){
+		console.log('hi')
+	}
+	console.log(arr)
+	arr.sayHi();
+	// arr.sort();
+	arr.sort = function(){
+		console.log('haha')
+	}
+	arr.sort();
+</script>
+</html>
