@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>190-正则概念-区间.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'asdfas5654sdaA你哈SDsdfwerabcde n5打法asdfasdf4顶顶顶564s464afsdf$%asdf#';
+	var reg = /a|b|c|d/g;
+	var reg1 = /[a-z]/g;
+	var reg2 = /[a|b|c|d|e]/g;
+	var reg3 = /[abcde]/g;
+	var reg4 = /abcde/g;
+	var reg5 = /[0-9]/g;
+	var reg6 = /[0-9a-zA-Z]/g;
+	var reg7 = /[^0-9]/g;
+	var reg8 = /[\u4e00-\u9fa5]/g;
+	console.log(str.replace(reg,'*'))
+	console.log(str.replace(reg1,'*'))
+	console.log(str.replace(reg2,'*'))
+	console.log(str.replace(reg3,'*'))
+	console.log(str.replace(reg4,'*'))
+	console.log(str.replace(reg5,'*'))
+	console.log(str.replace(reg6,'*'))
+	console.log(str.replace(reg7,'*'))
+	console.log(str.replace(reg8,'*'))
+
+
+	var str1 = '你好aaa';
+	console.log(str1.length);
+	function getLength(str){
+		return str.replace(/[\u4e00-\u9fa5]/g,'aa').length;
+	}
+	console.log(getLength(str1));
+</script>
+</html>

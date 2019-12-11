@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>187-创建正则.html</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var str = 'abc abd abe';
+	var reg = new RegExp('a','g');
+	var reg2 = /a/g;
+	console.log(str.replace(reg,'*'));
+	//返回值是一个新的字符串
+	console.log(str.replace(reg2,'*'));
+</script>
+</html>
